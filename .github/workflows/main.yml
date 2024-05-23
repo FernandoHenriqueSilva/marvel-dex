@@ -22,6 +22,6 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: | 
-            fernandohs99/marvel-dex-live:V${{ github_run_number }}
+            fernandohs99/marvel-dex-live:V${{ github.run_number }}
             fernandohs99/marvel-dex-live:latest
             
