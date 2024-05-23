@@ -24,4 +24,14 @@ jobs:
           tags: | 
             fernandohs99/marvel-dex-live:V${{ github.run_number }}
             fernandohs99/marvel-dex-live:latest
+
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Deploy Azure App Service"
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: fernando-livego
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: fernandohs99/marvel-dex-live:V${{ github.run_number }}
             
